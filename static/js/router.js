@@ -8,6 +8,7 @@ define([
     ], function(Backbone, ImageView, Images) {
         var Router = Backbone.Router.extend({
             routes: {
+                "s/:keyword": "search",
                 '*actions':'default'
             }
         });
@@ -18,6 +19,13 @@ define([
             // Handle default Routes
             router.on('route:default',
                 function() {
+
+                }
+            );
+
+            router.on('route:search',
+                function(keyword) {
+
                 }
             );
 
