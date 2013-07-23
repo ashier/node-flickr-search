@@ -1,0 +1,12 @@
+ <td>
+        <%= type %>
+    </td>
+    <td>
+        <%= description %></br></br>
+        <% _.each(profiles, function(profile){ %>
+                    <button class="btn profile" data-id="<%= profile.id %>" type="btn">Use <%= profile.name %> profile.</button></br></br>
+        <% }); %>
+
+        <button class="btn profile" data-id="empty" type="btn"> New Profile </button>
+
+    </td>
