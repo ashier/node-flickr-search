@@ -16,6 +16,8 @@ exports.search = function(req, res) {
     "text": req.query.keyword
   };
 
+  console.log("req.query.page", req.query.page);
+
   request.post(url, {
     form: form
   }, function(error, response, body) {
