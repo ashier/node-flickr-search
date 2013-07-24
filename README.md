@@ -1,4 +1,4 @@
-Node.js Flicker Search Example
-==============================
+### Node.js Flicker Search for Pollenizer
 
-Website accessible at http://ashier.com:3000/
+Visit at  
+###### _http://pollenizer.ashier.com_
