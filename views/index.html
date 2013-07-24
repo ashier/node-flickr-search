@@ -30,14 +30,14 @@
 
     <script type="text/template" id="photos-template">
             <div class="topNav">
-                <a id="prev" data="prev" class="btn btn-inverse pull-left" href="javascript:void(0);">&lsaquo;</a>
-                <a id="next" data="next" class="btn btn-inverse pull-right" href="javascript:void(0);">&rsaquo;</a>
+                <a id="prev" data="prev" class="btn btn-inverse pull-left" href="javascript:void(0);"><i class="icon-chevron-left"></i></a>
+                <a id="next" data="next" class="btn btn-inverse pull-right" href="javascript:void(0);"><i class="icon-chevron-right"></i></a>
             </div>
             <div class="photos offset1">
                 <% _.each(photos, function(photo){ %>
                     <article>
                         <div class="image_thumbnail">
-                            <img src="<%= photo.thumbnail.source %>" alt=""></div>
+                            <a class="thumbnail" href="<%= photo.large.url %>" target="_blank"><img src="<%= photo.thumbnail.source %>" alt=""></div></a>
                     </article>
                 <% }); %></div>
         </script>

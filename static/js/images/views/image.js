@@ -10,7 +10,7 @@ define([
     page: 1,
 
     events: {
-      'click a': 'paginate'
+      'click a.btn': 'paginate'
     },
 
     initialize: function() {
