@@ -23,7 +23,7 @@ define([
     // Handle default Routes
     router.on('route:default', function() {
       search = new Search({
-        el: $('#contents')
+        el: $('#contentsearch')
       });
       search.clear();
       search.render();
@@ -40,7 +40,22 @@ define([
       function(keyword) {
 
         try {
-          search.clear();
+          if (search) {
+            search.moveTop();
+          } else {
+            search = new Search({
+              el: $('#contentsearch')
+            });
+            search.render();
+
+            search.on("search", function(data) {
+              router.navigate("s/" + data, {
+                trigger: true
+              });
+            });
+          }
+
+          $('#search').val(keyword);
           $('#messageAlert').addClass("hidden");
         } catch (e) {}
 
@@ -52,7 +67,10 @@ define([
         var imageCollection = new Images();
         imageCollection.url = "api/search";
 
-        console.log("Fetching:", keyword);
+        var imageView = new ImageView({
+          model: imageCollection,
+          el: $('#contents')
+        });
 
         // fetch
         imageCollection.fetch({
@@ -62,7 +80,7 @@ define([
 
           success: function(model) {
             var photos = model.toJSON()[0];
-            console.log("photos", photos);
+            console.log("photos loaded", photos);
           },
 
           error: function(error) {

@@ -23,6 +23,11 @@ define([
       return this;
     },
 
+    moveTop: function() {
+      this.$el.addClass('moveTop');
+      return this;
+    },
+
     search: function(event) {
       var target = event.target;
       var data = $("#search").val();

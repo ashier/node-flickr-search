@@ -23,13 +23,26 @@
                 <div id="messageAlert" class="container row-fluid hidden">
                     <div id="message" class="alert alert-error error">Oops, error encountered. Please try again.</div>
                 </div>
+                <div id="contentsearch" class="row-fluid">
+                </div>
                 <div id="contents" class="row-fluid">
                 </div>
-
             </section>
         </div>
-        <script type="text/template" id="image-template">
-            <li><%= image.source %></li>
+        <script type="text/template" id="photos-template">
+            <div class="topNav">
+                <a class="btn pull-left" href="#">previous</a>
+                <a class="btn pull-right" href="#">next</a>
+            </div>
+            <div class="photos offset1">
+                <% _.each(photos, function(photo){ %>
+                    <article>
+                        <div class="image_thumbnail">
+                            <img src="<%= photo.thumbnail.source %>" alt="">
+                        </div>
+                    </article>
+                <% }); %>
+            </div>
         </script>
         <script type="text/template" id="search-template">
             <div class="searchContainer">
