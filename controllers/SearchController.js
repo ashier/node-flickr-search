@@ -10,7 +10,7 @@ exports.search = function(req, res) {
     "method": "flickr.photos.search",
     "api_key": "c4aa8bb5e96ee85dac99c2030bdd0fe8",
     "format": "json",
-    "per_page": "12",
+    "per_page": "9",
     "in_gallery": "true",
     "page": (req.query.page || 1),
     "text": req.query.keyword
