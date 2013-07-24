@@ -19,27 +19,36 @@
 
     <body>
         <div class="container">
-            <div id="contents" class="row-fluid">
-                <div class="loader">
-                    <img src="/static/img/loader.gif" alt="loading...">
+            <section>
+                <div id="messageAlert" class="container row-fluid hidden">
+                    <div id="message" class="alert alert-error error">Oops, error encountered. Please try again.</div>
                 </div>
-            </div>
+                <div id="contents" class="row-fluid">
+                </div>
+
+            </section>
         </div>
+        <script type="text/template" id="image-template">
+            <li><%= image.source %></li>
+        </script>
         <script type="text/template" id="search-template">
-            <div id="search" class="searchContainer">
+            <div class="searchContainer">
                 <div class="search offset3 span6">
-                    <form>
-                        <div class="inputSearch">
-                            <input type="text" placeholder="What image are you looking for?">
-                        </div>
-                        <a href="javascript:void(0);" title="Search"><img src="/static/img/search.png" alt="search now!"></a>
-                    </form>
+                    <div class="inputSearch">
+                        <input id="search" type="text" placeholder="What image are you looking for?">
+                    </div>
+                    <a href="javascript:void(0);" title="Search"><img src="/static/img/search.png" alt="search now!"></a>
                 </div>
                 <div class="powered">
                     images powered by <span class="blue">flick<span class="pink">r</span></span><br />
                     app developed for <span class="pink">Pollenizer</span>
                 </div>
                 <div class="content"></div>
+            </div>
+        </script>
+        <script type="text/template" id="loading-template">
+            <div class="loader">
+                <img src="/static/img/loader.gif" alt="loading...">
             </div>
         </script>
         <script data-main="/static/js/config" src="/static/js/vendors/require.js"></script>

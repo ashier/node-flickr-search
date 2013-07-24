@@ -2,12 +2,12 @@
 "use strict";
 
 define([
-    'backbone'
-    ], function(Backbone) {
+  'backbone'
+], function(Backbone) {
 
-        var Image = Backbone.Model.extend({
-        });
+  var Image = Backbone.Model.extend({
+    url:"api/search/image/"
+  });
 
-        return Image;
-    }
-);
+  return Image;
+});

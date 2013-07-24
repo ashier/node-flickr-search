@@ -12,7 +12,9 @@ define([
     },
 
     render: function() {
-
+      var templateHTML = _.template($('#loading-template').html());
+      this.$el.html(templateHTML);
+      return this;
     },
 
     clear: function() {

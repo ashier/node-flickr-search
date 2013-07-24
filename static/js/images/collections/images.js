@@ -2,15 +2,13 @@
 "use strict";
 
 define([
-    'backbone',
-    'images/models/image'
-    ], function(Backbone, Image) {
+  'backbone',
+  'images/models/image'
+], function(Backbone, Image) {
 
-        var Images = Backbone.Collection.extend({
-            model:Image,
-            url:"api/search"
-        });
+  var Images = Backbone.Collection.extend({
+    model: Image,
+  });
 
-        return Images;
-    }
-);
+  return Images;
+});

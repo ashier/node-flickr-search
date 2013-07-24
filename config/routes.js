@@ -1,3 +1,5 @@
+"use strict";
+
 (function() {
 
   var IndexController = require('../controllers/IndexController');
@@ -5,18 +7,15 @@
 
   module.exports = function() {
 
-    var app;
-
     return {
       initialize: function(app) {
-        this.app = app;
 
         // Index
         app.get('/', IndexController.index);
 
         // Search
-        app.get('/api/search/:keyword', SearchController.search);
-         app.get('/api/search/image/:id', SearchController.searchImage);
+        app.get('/api/search', SearchController.search);
+        app.get('/api/search/image', SearchController.searchImage);
 
       }
     };
